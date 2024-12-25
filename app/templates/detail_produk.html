@@ -1,46 +1,110 @@
-{% extends "base.html" %}
-
-{% block content %}    <!-- Detail Produk -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="{{product['image']}}" class="img-fluid" alt="Gambar Produk">
-                </div>
-                <div class="col-md-6">
-                    <h1>{{product['title']}}</h1>
-                    <p class="text-muted">{{product['category']}}</p>
-                    <h4 class="text-primary">{{product['price']}}</h4>
-                    <button class="btn btn-success">Beli Sekarang</button>
-                </div>
-            </div>
-            <hr class="my-5">
-            <div class="row">
-                <div class="col-12">
-                    <h3>Deskripsi Produk</h3>
-                    <p>{{product['description']}}</p>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <h3>Ulasan</h3>
-                    <div class="mb-3">
-                        <strong>John Doe</strong>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ⭐⭐⭐⭐☆</p>
-                    </div>
-                    <div class="mb-3">
-                        <strong>Jane Smith</strong>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco. ⭐⭐⭐⭐⭐</p>
-                    </div>
-                    <form>
-                        <div class="mb-3">
-                            <label for="review" class="form-label">Tulis Ulasan Anda</label>
-                            <textarea class="form-control" id="review" rows="4" placeholder="Bagikan pengalaman Anda"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Kirim Ulasan</button>
-                    </form>
-                </div>
-            </div>
+{% extends "base.html" %} {% block content %}
+<!-- Detail Produk -->
+<section class="py-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="fixed-size-img-container">
+          <img
+            src="{{product['image']}}"
+            class="img-fluid fixed-size-img"
+            alt="Product Image"
+          />
         </div>
-    </section>
-    {% endblock %}
+      </div>
+      <div class="col-md-6 text-white">
+        <h1>{{product['title']}}</h1>
+        <p class="text-muted">{{product['category']}}</p>
+        <h4 class="text-price">${{product['price']}}</h4>
+        <a href="/product/{{product.id}}">
+          <button class="btn btn-gradient-vertical">Beli Sekarang</button>
+        </a>
+      </div>
+    </div>
+    <hr class="my-5" />
+    <div class="row">
+      <div class="col-12 text-white">
+        <h3>Product Description</h3>
+        <p>{{product['description']}}</p>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12 text-white">
+        <h3>Reviews</h3>
+        <div class="mb-3">
+          <strong>John Doe</strong>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. ⭐⭐⭐⭐☆
+          </p>
+        </div>
+        <div class="mb-3">
+          <strong>Jane Smith</strong>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            ⭐⭐⭐⭐⭐
+          </p>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="review" class="form-label">Write Your Reviews</label>
+            <textarea
+              class="form-control"
+              id="review"
+              rows="4"
+              placeholder="Share your experience"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Reviews</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<!-- Add the following styles to the styles.css file or within a <style> tag in base.html -->
+<style>
+  .glow {
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.5);
+  }
+  .fixed-size-img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+  }
+  .fixed-size-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+  }
+  .btn-gradient-vertical {
+    background: linear-gradient(to bottom, #ff0000, #333333);
+    color: white;
+    border: none;
+    font-weight: bold;
+    width: 100%; /* Make button full width */
+    margin: 10px 0 30px; /* Add margin: top 10px, bottom 30px */
+    transition: box-shadow 0.3s ease;
+  }
+  .btn-gradient-vertical:hover {
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Glow effect on hover */
+  }
+  .text-white {
+    color: #ffffff !important;
+  }
+  .text-muted {
+    color: #cccccc !important;
+  }
+  .text-price {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Glow effect */
+    cursor: default; /* Prevent cursor change on hover */
+  }
+  .text-price:hover {
+    color: #ff0000; /* No color change on hover */
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Maintain glow effect on hover */
+  }
+</style>
