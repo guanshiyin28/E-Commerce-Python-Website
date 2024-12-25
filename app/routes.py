@@ -11,7 +11,7 @@ def index():
 def kategori():
     return render_template("kategori.html")
 
-@app.route('/produk')
+@app.route('/product')
 def produk():
     products=[]
     r=req.get('https://fakestoreapi.com/products')
@@ -26,11 +26,11 @@ def produk():
                 image=product['image']
             )
         )
-    return render_template("produk.html", products=products)
+    return render_template("product.html", products=products)
 
 @app.route('/contact')
 def contact():
-    return render_template("kontak.html")
+    return render_template("contact.html")
 
 @app.route('/product/<int:product_id>', methods=['GET'])
 def get_product(product_id):

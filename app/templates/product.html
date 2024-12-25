@@ -1,0 +1,208 @@
+{% extends "base.html" %} {% block title %} Guan - Product {% endblock %} {%
+block content %}
+
+<!-- Produk -->
+<section id="produk" class="py-5 mb-5">
+  <div class="container">
+    <h2 class="text-center mb-4 contact-title">Latest Product</h2>
+    <div class="row">
+      {% for product in products %}
+      <div class="col-md-3 mb-4 animate-on-scroll">
+        <a href="/product/{{product.id}}" class="text-decoration-none">
+          <div
+            class="card box-shadow"
+            style="background-color: #000000; margin: 15px"
+          >
+            <div class="img-container">
+              <img src="{{product.image}}" class="card-img-top img-fluid" />
+            </div>
+            <div class="card-body text-white d-flex flex-column text-center">
+              <h5 class="card-title" title="{{product.title}}">
+                {{ product.title | truncate(30, True, '...') }}
+              </h5>
+              <p class="card-text">${{product.price}}</p>
+              <div class="mt-auto">
+                <a
+                  href="/product/{{product.id}}"
+                  class="btn btn-custom-gradient"
+                  >Beli</a
+                >
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Custom CSS for glow effect, fixed image size, and gradient button -->
+<style>
+  .glow {
+    transition: box-shadow 0.3s ease;
+  }
+  .glow:hover {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5); /* Green glow effect on hover */
+  }
+  .card {
+    height: 100%;
+  }
+  .contact-title {
+    font-weight: bold;
+    color: #00ff00; /* Green color */
+  }
+  .btn-custom-gradient {
+    background: linear-gradient(
+      to bottom,
+      #00ff00,
+      #ffffff
+    ); /* Green to white gradient */
+    color: black;
+    border: none;
+    display: block;
+    margin: 0 auto; /* Center the button */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    padding: 10px 20px;
+  }
+  .btn-custom-gradient:hover {
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; /* Green glow effect on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    color: white; /* Change text color to white on hover */
+  }
+  .img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Adjust the aspect ratio (1:1 for square images) */
+    overflow: hidden;
+  }
+  .img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    transition: transform 0.3s ease; /* Animation effect */
+  }
+  .img-container:hover img {
+    transform: scale(1.1); /* Scale up the image on hover */
+  }
+  .card-body a {
+    text-decoration: none !important; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+  }
+  .card-body a:hover {
+    color: #00ff00; /* Change color on hover */
+  }
+  .card-body h5,
+  .card-body p {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  .card-body h5:hover,
+  .card-body p:hover {
+    color: #00ff00; /* Change color to green on hover */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Green glow effect on hover */
+  }
+  .card-body h5 {
+    font-size: 1rem; /* Adjust font size for card titles */
+    font-weight: bold; /* Make the text bold */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) at the end of overflowed text */
+    position: relative; /* Position for tooltip */
+  }
+  .card-body h5:hover::after {
+    content: attr(title); /* Use the title attribute as the tooltip text */
+    position: absolute;
+    left: 0;
+    bottom: 100%; /* Position the tooltip above the text */
+    width: max-content; /* Adjust width */
+    max-width: 200px; /* Set the max-width for long titles */
+    background: rgba(0, 0, 0, 0.8); /* Background color for tooltip */
+    color: #fff; /* Text color for tooltip */
+    padding: 5px; /* Padding inside tooltip */
+    border-radius: 5px; /* Rounded corners for tooltip */
+    white-space: normal; /* Allow text to wrap */
+    z-index: 10; /* Ensure tooltip is above other elements */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add some shadow for better visibility */
+  }
+</style>
+
+<!-- GSAP and ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/ScrollTrigger.min.js"></script>
+<script>
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Select all elements to animate
+  const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
+
+  // Apply animation to each element
+  elementsToAnimate.forEach((element) => {
+    gsap.fromTo(
+      element,
+      {
+        y: 50, // Start position
+        opacity: 0, // Start with opacity 0
+      },
+      {
+        y: 0, // End position
+        opacity: 1, // End with opacity 1
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%", // When the top of the element is 80% from the top of the viewport
+          end: "bottom 20%", // When the bottom of the element is 20% from the bottom of the viewport
+          toggleActions: "play none none reverse", // Play the animation when scrolling into view and reverse when scrolling out
+        },
+      }
+    );
+  });
+
+  // Add text animation to buttons
+  const buttons = document.querySelectorAll(".btn-custom-gradient");
+  buttons.forEach((button) => {
+    gsap.fromTo(
+      button,
+      { opacity: 0, y: -10 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: button,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+
+  // Navbar animation
+  gsap.from("#navbar", {
+    y: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // Footer animation
+  gsap.from("#footer", {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top bottom",
+      toggleActions: "play none none none",
+    },
+  });
+</script>
+
+{% endblock %}
