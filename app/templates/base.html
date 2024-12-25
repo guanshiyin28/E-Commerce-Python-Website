@@ -152,12 +152,59 @@
           0.9
         ); /* Slightly less transparent on scroll */
       }
+
+      /* Equalizer styles */
+      .equalizer {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 10px;
+        width: 20px;
+      }
+      .equalizer-bar {
+        width: 3px;
+        height: 10px;
+        background-color: #00ff00;
+        margin: 0 1px;
+        transition: all 0.3s ease;
+      }
+      .equalizer-bar:nth-child(1) {
+        animation: equalizer 0.5s infinite;
+      }
+      .equalizer-bar:nth-child(2) {
+        animation: equalizer 0.5s 0.1s infinite;
+      }
+      .equalizer-bar:nth-child(3) {
+        animation: equalizer 0.5s 0.2s infinite;
+      }
+
+      @keyframes equalizer {
+        0% {
+          transform: scaleY(1);
+        }
+        50% {
+          transform: scaleY(2);
+        }
+        100% {
+          transform: scaleY(1);
+        }
+      }
+
+      .equalizer.paused .equalizer-bar {
+        animation: none;
+        transform: scaleY(1);
+      }
     </style>
   </head>
   <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark box-shadow" id="navbar">
       <div class="container">
+        <div class="equalizer" id="equalizer">
+          <div class="equalizer-bar"></div>
+          <div class="equalizer-bar"></div>
+          <div class="equalizer-bar"></div>
+        </div>
         <a class="navbar-brand glow-text" href="#">Guan</a>
         <button
           class="navbar-toggler"
@@ -181,9 +228,9 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link {% if request.path == '/kategori' %}active{% endif %}"
-                href="/kategori"
-                >Kategori</a
+                class="nav-link {% if request.path == '/about' %}active{% endif %}"
+                href="/about"
+                >About</a
               >
             </li>
             <li class="nav-item">
@@ -220,6 +267,12 @@
         <a href="/" class="glow-text">&copy; 2024 Guan. All Rights Reserved.</a>
       </div>
     </footer>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+      <source src="/static/audio/Saving Light.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
 
     <!-- JavaScript files -->
     <script src="/static/js/main.js"></script>
@@ -298,6 +351,35 @@
           start: "top bottom",
           toggleActions: "play none none none",
         },
+      });
+
+      // Control background music
+      const audioElement = document.getElementById("background-music");
+      const equalizerElement = document.getElementById("equalizer");
+      audioElement.volume = 0.1; // Set volume to a reasonable level
+
+      // Save and restore the playback position
+      window.addEventListener("beforeunload", () => {
+        localStorage.setItem("background-music-time", audioElement.currentTime);
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedTime = localStorage.getItem("background-music-time");
+        if (savedTime !== null) {
+          audioElement.currentTime = savedTime;
+        }
+        audioElement.play();
+      });
+
+      // Toggle music playback and equalizer animation
+      equalizerElement.addEventListener("click", () => {
+        if (audioElement.paused) {
+          audioElement.play();
+          equalizerElement.classList.remove("paused");
+        } else {
+          audioElement.pause();
+          equalizerElement.classList.add("paused");
+        }
       });
     </script>
   </body>

@@ -7,9 +7,9 @@ from app.models.product import Product
 def index():
     return render_template("index.html")
 
-@app.route('/kategori')
+@app.route('/about')
 def kategori():
-    return render_template("kategori.html")
+    return render_template("about.html")
 
 @app.route('/product')
 def produk():
