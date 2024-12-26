@@ -76,3 +76,19 @@
   scrollbar-width: thin; /* Make scrollbar thinner */
   scrollbar-color: #333333 #000000; /* Thumb color and track color */
 }
+
+.category-icon {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 10px; /* Space between icon and text */
+  transition: text-shadow 0.3s ease;
+}
+
+.glow-animation-white {
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.category-icon.glow-animation-white:hover {
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
