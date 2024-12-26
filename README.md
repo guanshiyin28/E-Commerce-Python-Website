@@ -1,10 +1,10 @@
 <div align=center>
   
-![Demo](https://github.com/user-attachments/assets/e15154a0-bd7f-44c4-80a1-cac2c855e08c)
+![Demo](https://github.com/user-attachments/assets/a5b7f6ff-c3ec-403c-aa05-4affde0130a0)
 
 </div>
 
-# Python Marketplace Website
+# E-Commerce Python Website
 
 This repository aims to provide a starting point for developing a Python-based marketplace web application.
 
@@ -19,16 +19,6 @@ This repository serves as a foundational framework for developing a Python-based
 ## Steps
 
 1. Install python
-
-```
-
-```
-
-<div align=center>
-  
-
-</div>
-
 2. Install & upgrade pip
 
 ```
@@ -37,69 +27,30 @@ python get-pip.py
 python -m pip install --upgrade pip
 ```
 
-<div align=center>
-  
-![2](https://github.com/user-attachments/assets/18857cfc-0606-4f8e-b163-aea0e2e7e009)
-
-</div>
-
-3. Install flask
+3. Clone this Repository
 
 ```
-pip install Flask
+git clone https://github.com/guanshiyin28/E-Commerce-Python-Website.git
 ```
 
-<div align=center>
-  
-![3](https://github.com/user-attachments/assets/73e241f4-3263-4fd6-aa1b-d20003a435bc)
-
-</div>
-
-4. Install requests
+4. Direct to the directory
 
 ```
-pip install requests
-```
-<div align=center>
-  
-![4](https://github.com/user-attachments/assets/4cf49a0c-d02d-4d8e-844d-1c9b30e7b63b)
-
-</div>
-
-5. Clone this Repository
-
-```
-git clone https://github.com/guanshiyin28/Python-Marketplace-Website.git
+cd E-Commerce-Python-Website
 ```
 
-<div align=center>
-
-![5](https://github.com/user-attachments/assets/9de750a9-ce59-4875-9c2a-261dda58f795)
-
-</div>
-
-6. Direct to the directory
+5. Install requirements.txt
 
 ```
-cd Python-Marketplace-Website
+pip install requirements.txt
 ```
 
-<div align=center>
-  
-![6](https://github.com/user-attachments/assets/1877733d-db06-4511-98e2-7d6358fafd3c)
-
-</div>
-
-7. Run with python and see through the localhost
+6. Run with python and see through the localhost
 
 ```
 python app.py
 ```
-<div align=center>
-  
-![7](https://github.com/user-attachments/assets/6b9c4c78-86b8-4d6b-8523-2a3a1cb6b24b)
 
-</div>
 <hr><br>
 
 <div align="center">
