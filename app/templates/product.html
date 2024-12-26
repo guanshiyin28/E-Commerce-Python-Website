@@ -4,7 +4,7 @@ block content %}
 <!-- Produk -->
 <section id="produk" class="py-5 mb-5">
   <div class="container">
-    <h2 class="text-center mb-4 contact-title">Latest Product</h2>
+    <h2 class="text-center mb-4 contact-title glow-green">Latest Product</h2>
     <div class="row">
       {% for product in products %}
       <div class="col-md-3 mb-4 animate-on-scroll">
@@ -47,29 +47,43 @@ block content %}
   }
   .card {
     height: 100%;
+    transition: box-shadow 0.3s ease; /* Smooth transition for card glow */
+  }
+  .card:hover {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5); /* Green glow effect on hover */
   }
   .contact-title {
     font-weight: bold;
-    color: #00ff00; /* Green color */
+  }
+  .glow-green {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Green glow effect */
+    transition: color 0.5s ease, text-shadow 0.5s ease; /* Smooth transition */
+  }
+  .glow-green:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect */
+    cursor: default; /* Prevent cursor change on hover */
   }
   .btn-custom-gradient {
     background: linear-gradient(
-      to bottom,
+      135deg,
       #00ff00,
-      #ffffff
-    ); /* Green to white gradient */
-    color: black;
+      #003300
+    ); /* Green to dark green gradient */
+    color: white;
     border: none;
     display: block;
     margin: 0 auto; /* Center the button */
     transition: box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
     font-weight: bold;
     padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners */
   }
   .btn-custom-gradient:hover {
     box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; /* Green glow effect on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
-    color: white; /* Change text color to white on hover */
+    color: white; /* Maintain text color white on hover */
   }
   .img-container {
     position: relative;

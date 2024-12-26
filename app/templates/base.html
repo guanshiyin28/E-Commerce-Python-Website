@@ -264,7 +264,7 @@
       id="footer"
     >
       <div class="container">
-        <a href="/" class="glow-text">&copy; 2024 Guan. All Rights Reserved.</a>
+        <a href="#" class="glow-text">&copy; 2024 Guan. All Rights Reserved.</a>
       </div>
     </footer>
 
@@ -356,7 +356,7 @@
       // Control background music
       const audioElement = document.getElementById("background-music");
       const equalizerElement = document.getElementById("equalizer");
-      audioElement.volume = 0.1; // Set volume to a reasonable level
+      audioElement.volume = 0.5; // Set volume to a reasonable level
 
       // Save and restore the playback position
       window.addEventListener("beforeunload", () => {
@@ -373,6 +373,7 @@
 
       // Toggle music playback and equalizer animation
       equalizerElement.addEventListener("click", () => {
+        console.log("Equalizer clicked"); // Debugging statement
         if (audioElement.paused) {
           audioElement.play();
           equalizerElement.classList.remove("paused");
