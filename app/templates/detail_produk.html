@@ -14,7 +14,7 @@
       </div>
       <div class="col-md-6 text-white">
         <h1>{{product['title']}}</h1>
-        <p class="text-muted">{{product['category']}}</p>
+        <p class="text-category">{{product['category']}}</p>
         <h4 class="text-price">${{product['price']}}</h4>
         <a href="/product/{{product.id}}">
           <button class="btn btn-gradient-vertical">Beli Sekarang</button>
@@ -106,5 +106,8 @@
   .text-price:hover {
     color: #ff0000; /* No color change on hover */
     text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Maintain glow effect on hover */
+  }
+  .text-category {
+    color: #00ff00 !important; /* Green color */
   }
 </style>

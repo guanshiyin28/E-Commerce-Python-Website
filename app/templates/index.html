@@ -4,10 +4,12 @@ content %}
 <!-- Hero Section -->
 <section id="hero" class="py-5 text-center">
   <div class="container text-white">
-    <h1 class="display-3 fw-bold glow-animation-white cursor-default">
+    <h1
+      class="display-3 fw-bold glow-animation-white cursor-default hover-glow-green"
+    >
       Welcome to Guan
     </h1>
-    <p class="lead glow-animation-white cursor-default">
+    <p class="lead glow-animation-white cursor-default hover-glow-green">
       Your one-stop shop for all things amazing
     </p>
   </div>
@@ -17,7 +19,7 @@ content %}
 <section id="kategori" class="py-5">
   <div class="container">
     <h2
-      class="text-center mb-4 contact-title glow-animation-green cursor-default"
+      class="text-center mb-4 contact-title glow-animation-green cursor-default hover-glow-white"
     >
       Product Category
     </h2>
@@ -81,7 +83,7 @@ content %}
 <section id="featured-products" class="py-5">
   <div class="container">
     <h2
-      class="text-center mb-4 contact-title glow-animation-green cursor-default"
+      class="text-center mb-4 contact-title glow-animation-green cursor-default hover-glow-white"
     >
       Featured Products
     </h2>
@@ -188,6 +190,10 @@ content %}
   }
   .card {
     height: 100%;
+    transition: box-shadow 0.3s ease; /* Smooth transition for card glow */
+  }
+  .card:hover {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5); /* Green glow effect on hover */
   }
   .contact-title {
     font-weight: bold;
@@ -197,44 +203,21 @@ content %}
     background: linear-gradient(
       135deg,
       #00ff00,
-      #ffffff,
-      #000000
-    ); /* Green to white to black gradient */
-    color: black;
+      #003300
+    ); /* Green to dark green gradient */
+    color: white;
     border: none;
     display: block;
     margin: 0 auto; /* Center the button */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Add margin to move the button up and center */
   }
   .btn-custom-gradient:hover {
-    transform: translateY(-5px); /* Move up on hover */
-    box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.8); /* Enhanced green glow effect on hover */
-    color: white; /* Change text color to white on hover */
-  }
-  .btn-custom-gradient {
-    position: relative;
-    z-index: 1;
-  }
-  .btn-custom-gradient::before {
-    content: "";
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    bottom: -4px;
-    left: -4px;
-    border-radius: 8px;
-    background: rgba(0, 255, 0, 0.5);
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-  }
-  .btn-custom-gradient:hover::before {
-    opacity: 1;
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; /* Green glow effect on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    color: white; /* Maintain text color white on hover */
   }
   .img-container {
     position: relative;
@@ -267,9 +250,25 @@ content %}
   }
   .glow-animation-white {
     text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* Initial white glow effect */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
   }
   .glow-animation-green {
     text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Initial green glow effect */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+  }
+  .hover-glow-green {
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+  }
+  .hover-glow-green:hover {
+    color: #00ff00; /* Change text color to green on hover */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Green glow effect on hover */
+  }
+  .hover-glow-white {
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+  }
+  .hover-glow-white:hover {
+    color: #ffffff; /* Change text color to white on hover */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect on hover */
   }
   .cursor-default {
     cursor: default; /* Ensure cursor does not change */

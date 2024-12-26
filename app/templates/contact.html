@@ -4,32 +4,40 @@ block content %}
 <!-- Kontak -->
 <section id="contact" class="py-5 mb-5">
   <div class="container">
-    <h2 class="text-center mb-4 contact-title">Our Contact</h2>
+    <h2
+      class="text-center mb-4 contact-title glow-animation-green cursor-default"
+    >
+      Our Contact
+    </h2>
     <div class="row">
       <div class="col-md-6">
         <div class="card box-shadow mb-3" style="background-color: #000000">
           <div class="card-header grad-header">Contact Information</div>
-          <div class="card-body text-white text-center">
+          <div class="card-body text-white text-center p-4">
             <div class="contact-info">
-              <div class="contact-item">
+              <div class="contact-item mb-4">
                 <h4 class="card-title">
-                  <i class="fas fa-map-marker-alt"></i> Alamat
+                  <strong><i class="fas fa-map-marker-alt"></i> Alamat</strong>
                 </h4>
-                <p class="card-text">
+                <p class="card-text mb-0">
                   〒150-0031 Tokyo, Shibuya<br />
                   Sakuragaokacho, 20−1 渋谷インフォスタワ 19階<br />
                   Japan
                 </p>
               </div>
+              <hr class="divider" />
+              <div class="contact-item mb-4">
+                <h4 class="card-title">
+                  <strong><i class="fas fa-envelope"></i> Email</strong>
+                </h4>
+                <p class="card-text mb-0">guanshiyinnn@gmail.com</p>
+              </div>
+              <hr class="divider" />
               <div class="contact-item">
                 <h4 class="card-title">
-                  <i class="fas fa-envelope"></i> Email
+                  <strong><i class="fas fa-phone"></i> Phone</strong>
                 </h4>
-                <p class="card-text">guanshiyinnn@gmail.com</p>
-              </div>
-              <div class="contact-item">
-                <h4 class="card-title"><i class="fas fa-phone"></i> Phone</h4>
-                <p class="card-text">+62 813 8131 9442</p>
+                <p class="card-text mb-0">+62 813 8131 9442</p>
               </div>
             </div>
           </div>
@@ -41,7 +49,9 @@ block content %}
           <div class="card-body text-white">
             <form>
               <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label"
+                  ><strong>Name</strong></label
+                >
                 <input
                   type="text"
                   class="form-control"
@@ -50,7 +60,9 @@ block content %}
                 />
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label"
+                  ><strong>Email</strong></label
+                >
                 <input
                   type="email"
                   class="form-control"
@@ -59,7 +71,9 @@ block content %}
                 />
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
+                <label for="message" class="form-label"
+                  ><strong>Message</strong></label
+                >
                 <textarea
                   class="form-control"
                   id="message"
@@ -67,7 +81,7 @@ block content %}
                   placeholder="Write Your Message"
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-gradient-vertical">
+              <button type="submit" class="btn btn-custom-gradient">
                 Submit
               </button>
             </form>
@@ -77,7 +91,11 @@ block content %}
     </div>
     <div class="row mt-5">
       <div class="col-md-12">
-        <h2 class="text-center mb-4 contact-title">Our Location</h2>
+        <h2
+          class="text-center mb-4 contact-title glow-animation-green cursor-default"
+        >
+          Our Location
+        </h2>
         <div
           class="card box-shadow"
           style="background-color: #000000; height: 60vh"
@@ -109,36 +127,54 @@ block content %}
   }
   .card {
     height: 100%;
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Ensure the inner elements respect the border radius */
   }
   .grad-header {
     background: linear-gradient(
-      to right,
-      #00ff00,
-      #000000
-    ); /* Green to black gradient */
+      135deg,
+      rgba(0, 255, 0, 0.8),
+      rgba(0, 128, 0, 0.8),
+      rgba(0, 64, 0, 0.8)
+    ); /* Smooth green gradient with transparency */
     color: white;
     text-align: center;
     font-weight: bold;
+    padding: 10px 0; /* Padding for better spacing */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
   .contact-title {
     font-weight: bold;
     color: #00ff00; /* Green color */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Green glow effect */
+    transition: color 0.5s ease, text-shadow 0.5s ease; /* Smooth transition */
   }
-  .btn-gradient-vertical {
+  .contact-title:hover {
+    color: #ffffff; /* White color on hover */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect on hover */
+  }
+  .btn-custom-gradient {
     background: linear-gradient(
-      to bottom,
+      135deg,
       #00ff00,
-      #333333
-    ); /* Green to black gradient */
+      #003300
+    ); /* Green to dark green gradient */
     color: white;
     border: none;
+    display: block;
+    margin: 0 auto; /* Center the button */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease;
     font-weight: bold;
-    width: 100%;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width button */
     margin: 10px 0 30px; /* Add margin: top 10px, bottom 30px */
-    transition: box-shadow 0.3s ease;
   }
-  .btn-gradient-vertical:hover {
+  .btn-custom-gradient:hover {
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Green glow effect on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    color: white; /* Maintain text color white on hover */
   }
   .contact-info {
     line-height: 1.6;
@@ -154,10 +190,25 @@ block content %}
     margin: 10px 0;
     font-size: 1.2em;
   }
+  .contact-info .divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
+  }
   .card-body iframe {
     display: block;
     width: 100%;
     height: 100%;
+  }
+  .glow-animation-green {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Initial green glow effect */
+    transition: color 0.5s ease, text-shadow 0.5s ease; /* Smooth transition */
+  }
+  .glow-animation-green:hover {
+    color: #ffffff; /* White color on hover */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect on hover */
+  }
+  .cursor-default {
+    cursor: default; /* Ensure cursor does not change */
   }
 </style>
 

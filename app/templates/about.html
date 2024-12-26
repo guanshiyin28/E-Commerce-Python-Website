@@ -1,0 +1,317 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- About My E-Commerce -->
+<section id="about" class="py-5 text-center">
+  <div class="container text-white">
+    <h2
+      class="text-center mb-4 glow-animation-green hover-glow-white cursor-default"
+      style="font-weight: bold"
+    >
+      About My E-Commerce
+    </h2>
+    <p class="lead hover-text-green" style="font-size: 0.9rem">
+      Welcome to our e-commerce platform, where we offer a wide range of
+      high-quality products across various categories. Our mission is to provide
+      our customers with the best online shopping experience by offering
+      top-notch customer service, fast shipping, and competitive prices.
+    </p>
+    <div class="row">
+      <div class="col-md-4 mb-4 animate-on-scroll">
+        <div
+          class="card box-shadow glow custom-cursor"
+          style="background-color: #000000; margin: 15px"
+        >
+          <div
+            class="card-body text-white text-center d-flex flex-column justify-content-between"
+          >
+            <h5
+              class="card-title glow-animation-white"
+              style="font-size: 1.25rem"
+            >
+              Our Mission
+            </h5>
+            <p class="card-text">
+              To deliver the best online shopping experience with a focus on
+              customer satisfaction.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate-on-scroll">
+        <div
+          class="card box-shadow glow custom-cursor"
+          style="background-color: #000000; margin: 15px"
+        >
+          <div
+            class="card-body text-white text-center d-flex flex-column justify-content-between"
+          >
+            <h5
+              class="card-title glow-animation-white"
+              style="font-size: 1.25rem"
+            >
+              Our Vision
+            </h5>
+            <p class="card-text">
+              To be the leading e-commerce platform known for quality,
+              reliability, and innovation.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate-on-scroll">
+        <div
+          class="card box-shadow glow custom-cursor"
+          style="background-color: #000000; margin: 15px"
+        >
+          <div
+            class="card-body text-white text-center d-flex flex-column justify-content-between"
+          >
+            <h5
+              class="card-title glow-animation-white"
+              style="font-size: 1.25rem"
+            >
+              Our Values
+            </h5>
+            <p class="card-text">
+              Integrity, customer focus, innovation, and excellence in
+              everything we do.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom CSS for glow effect, fixed image size, and gradient button -->
+<style>
+  .glow {
+    transition: box-shadow 0.3s ease;
+  }
+  .glow:hover {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5); /* Green glow effect on hover */
+  }
+  .card {
+    height: 100%;
+  }
+  .contact-title {
+    font-weight: bold;
+    color: #00ff00; /* Green color */
+  }
+  .btn-custom-gradient {
+    background: linear-gradient(
+      135deg,
+      #00ff00,
+      #ffffff,
+      #000000
+    ); /* Green to white to black gradient */
+    color: black;
+    border: none;
+    display: block;
+    margin: 0 auto; /* Center the button */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Add margin to move the button up and center */
+  }
+  .btn-custom-gradient:hover {
+    transform: translateY(-5px); /* Move up on hover */
+    box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.8); /* Enhanced green glow effect on hover */
+    color: white; /* Change text color to white on hover */
+  }
+  .img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Adjust the aspect ratio (1:1 for square images) */
+    overflow: hidden;
+  }
+  .img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    transition: transform 0.3s ease; /* Animation effect */
+  }
+  .img-container:hover img {
+    transform: scale(1.1); /* Scale up the image on hover */
+  }
+  .card-body h5 {
+    font-size: 1rem; /* Adjust font size for card titles */
+    font-weight: bold; /* Make the text bold */
+  }
+  .glow-on-hover-green {
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+  }
+  .glow-on-hover-green:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Green glow effect on hover */
+  }
+  .glow-animation-white {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* Initial white glow effect */
+    transition: text-shadow 0.5s ease; /* Add transition for smoother effect */
+  }
+  .glow-animation-green {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Initial green glow effect */
+    transition: text-shadow 0.5s ease; /* Add transition for smoother effect */
+    color: #00ff00;
+  }
+  .hover-glow-white:hover {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* White glow effect on hover */
+    color: white;
+    transition: text-shadow 0.5s ease, color 0.5s ease; /* Add transition for smoother effect */
+  }
+  .hover-text-green {
+    transition: color 0.5s ease; /* Slow down the transition */
+  }
+  .hover-text-green:hover {
+    color: #00ff00; /* Change text color to green on hover */
+  }
+  .cursor-default {
+    cursor: default; /* Ensure cursor does not change */
+  }
+</style>
+
+<!-- GSAP and ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.5/dist/index.umd.js"></script>
+<script>
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Initialize Lenis for smooth scrolling
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: "vertical",
+    gestureOrientation: "vertical",
+    smoothWheel: true,
+    smoothTouch: false,
+    touchMultiplier: 2,
+  });
+
+  // Bind Lenis scroll to GSAP
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Select all elements to animate
+  const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
+
+  // Apply animation to each element
+  elementsToAnimate.forEach((element) => {
+    gsap.fromTo(
+      element,
+      {
+        y: 50, // Start position
+        opacity: 0, // Start with opacity 0
+      },
+      {
+        y: 0, // End position
+        opacity: 1, // End with opacity 1
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%", // When the top of the element is 80% from the top of the viewport
+          end: "bottom 20%", // When the bottom of the element is 20% from the bottom of the viewport
+          toggleActions: "play none none reverse", // Play the animation when scrolling into view and reverse when scrolling out
+        },
+      }
+    );
+  });
+
+  // Add text animation to buttons
+  const buttons = document.querySelectorAll(".btn-custom-gradient");
+  buttons.forEach((button) => {
+    gsap.fromTo(
+      button,
+      { opacity: 0, y: -10 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: button,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+
+  // Add continuous glow animation for text
+  const glowTextsWhite = document.querySelectorAll(".glow-animation-white");
+  glowTextsWhite.forEach((text) => {
+    gsap.to(text, {
+      textShadow: "0 0 10px white, 0 0 20px white, 0 0 30px white", // White glow effect
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true, // Reverse the animation for a continuous effect
+      ease: "power2.inOut",
+    });
+  });
+
+  const glowTextsGreen = document.querySelectorAll(".glow-animation-green");
+  glowTextsGreen.forEach((text) => {
+    gsap.to(text, {
+      textShadow: "0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00", // Green glow effect
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true, // Reverse the animation for a continuous effect
+      ease: "power2.inOut",
+    });
+  });
+
+  // Add hover animation for text with GSAP
+  const hoverTexts = document.querySelectorAll(
+    ".glow-on-hover-green, .glow-on-hover-white"
+  );
+  hoverTexts.forEach((text) => {
+    text.addEventListener("mouseenter", () => {
+      gsap.to(text, {
+        textShadow:
+          "0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor",
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    });
+    text.addEventListener("mouseleave", () => {
+      gsap.to(text, {
+        textShadow: "0 0 0 currentColor",
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    });
+  });
+
+  // Navbar animation
+  gsap.from("#navbar", {
+    y: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // Footer animation
+  gsap.from("#footer", {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top bottom",
+      toggleActions: "play none none none",
+    },
+  });
+</script>
+
+{% endblock %}
