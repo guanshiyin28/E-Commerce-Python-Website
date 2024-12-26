@@ -4,12 +4,10 @@ content %}
 <!-- Hero Section -->
 <section id="hero" class="py-5 text-center">
   <div class="container text-white">
-    <h1
-      class="display-3 fw-bold glow-animation-white cursor-default hover-glow-green"
-    >
+    <h1 class="display-3 fw-bold glow-animation-white cursor-default">
       Welcome to Guan
     </h1>
-    <p class="lead glow-animation-white cursor-default hover-glow-green">
+    <p class="lead glow-animation-white cursor-default">
       Your one-stop shop for all things amazing
     </p>
   </div>
@@ -19,7 +17,7 @@ content %}
 <section id="kategori" class="py-5">
   <div class="container">
     <h2
-      class="text-center mb-4 contact-title glow-animation-green cursor-default hover-glow-white"
+      class="text-center mb-4 contact-title glow-animation-green cursor-default"
     >
       Product Category
     </h2>
@@ -36,8 +34,12 @@ content %}
               alt="Fashion"
             />
           </div>
-          <div class="card-body text-white d-flex flex-column text-center">
-            <h5 class="card-title" title="Kategori 1">Fashion</h5>
+          <div
+            class="card-body text-white d-flex flex-column text-center cursor-default"
+          >
+            <h4 class="card-title glow-animation-white mt-4" title="Kategori 1">
+              Fashion
+            </h4>
           </div>
         </div>
       </div>
@@ -53,8 +55,12 @@ content %}
               alt="Jewelry"
             />
           </div>
-          <div class="card-body text-white d-flex flex-column text-center">
-            <h5 class="card-title" title="Kategori 2">Jewelry</h5>
+          <div
+            class="card-body text-white d-flex flex-column text-center cursor-default"
+          >
+            <h4 class="card-title glow-animation-white mt-4" title="Kategori 2">
+              Jewelry
+            </h4>
           </div>
         </div>
       </div>
@@ -70,8 +76,12 @@ content %}
               alt="Electronics"
             />
           </div>
-          <div class="card-body text-white d-flex flex-column text-center">
-            <h5 class="card-title" title="Kategori 3">Electronics</h5>
+          <div
+            class="card-body text-white d-flex flex-column text-center cursor-default"
+          >
+            <h4 class="card-title glow-animation-white mt-4" title="Kategori 3">
+              Electronics
+            </h4>
           </div>
         </div>
       </div>
@@ -83,7 +93,7 @@ content %}
 <section id="featured-products" class="py-5">
   <div class="container">
     <h2
-      class="text-center mb-4 contact-title glow-animation-green cursor-default hover-glow-white"
+      class="text-center mb-4 contact-title glow-animation-green cursor-default"
     >
       Featured Products
     </h2>
@@ -103,9 +113,18 @@ content %}
           <div
             class="card-body text-white d-flex flex-column justify-content-between text-center"
           >
-            <h5 class="card-title" title="Product 1">Razer Blade 18</h5>
-            <p class="card-text">$3099,99</p>
-            <a href="/product" class="btn btn-custom-gradient mt-3">Buy Now</a>
+            <h5
+              class="card-title cursor-default glow-animation-white"
+              title="Product 1"
+            >
+              Razer Blade 18
+            </h5>
+            <p
+              class="card-text cursor-default contact-title glow-animation-green"
+            >
+              $3099,99
+            </p>
+            <a href="/product" class="btn btn-custom-gradient mb-3">Buy Now</a>
           </div>
         </div>
       </div>
@@ -124,9 +143,18 @@ content %}
           <div
             class="card-body text-white d-flex flex-column justify-content-between text-center"
           >
-            <h5 class="card-title" title="Product 2">Tendre Poison Dior</h5>
-            <p class="card-text">$278,00</p>
-            <a href="/product" class="btn btn-custom-gradient mt-3">Buy Now</a>
+            <h5
+              class="card-title glow-animation-white cursor-default"
+              title="Product 2"
+            >
+              Tendre Poison Dior
+            </h5>
+            <p
+              class="card-text cursor-default contact-title glow-animation-green"
+            >
+              $278,00
+            </p>
+            <a href="/product" class="btn btn-custom-gradient mb-3">Buy Now</a>
           </div>
         </div>
       </div>
@@ -145,11 +173,18 @@ content %}
           <div
             class="card-body text-white d-flex flex-column justify-content-between text-center"
           >
-            <h5 class="card-title" title="Product 3">
+            <h5
+              class="card-title glow-animation-white cursor-default"
+              title="Product 3"
+            >
               Harry Winston Green Emerald Ring
             </h5>
-            <p class="card-text">$130.000,00</p>
-            <a href="/product" class="btn btn-custom-gradient mt-3">Buy Now</a>
+            <p
+              class="card-text cursor-default contact-title glow-animation-green"
+            >
+              $130.000,00
+            </p>
+            <a href="/product" class="btn btn-custom-gradient mb-3">Buy Now</a>
           </div>
         </div>
       </div>
@@ -168,11 +203,18 @@ content %}
           <div
             class="card-body text-white d-flex flex-column justify-content-between text-center"
           >
-            <h5 class="card-title" title="Product 4">
+            <h5
+              class="card-title glow-animation-white cursor-default"
+              title="Product 4"
+            >
               Louis Vuitton<br /><br />Green & White Varsity Leather Jacket
             </h5>
-            <p class="card-text">$9.000,00</p>
-            <a href="/product" class="btn btn-custom-gradient mt-3">Buy Now</a>
+            <p
+              class="card-text cursor-default contact-title glow-animation-green"
+            >
+              $9.000,00
+            </p>
+            <a href="/product" class="btn btn-custom-gradient mb-3">Buy Now</a>
           </div>
         </div>
       </div>
@@ -236,6 +278,10 @@ content %}
   }
   .img-container:hover img {
     transform: scale(1.1); /* Scale up the image on hover */
+  }
+  .card-body h4 {
+    font-size: 1.5rem; /* Adjust font size for card titles */
+    font-weight: bold; /* Make the text bold */
   }
   .card-body h5 {
     font-size: 1rem; /* Adjust font size for card titles */
