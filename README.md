@@ -1,6 +1,6 @@
 <div align=center>
   
-![Demo](https://github.com/user-attachments/assets/a5b7f6ff-c3ec-403c-aa05-4affde0130a0)
+![image](https://github.com/user-attachments/assets/253287e6-25a9-4aef-95ae-53f94d441c48)
 
 </div>
 
@@ -14,6 +14,15 @@ This repository aims to provide a starting point for developing a Python-based m
 
 This repository serves as a foundational framework for developing a Python-based marketplace web application, encompassing core features such as user registration and authentication, product listing and management, basic search functionality, and a user-friendly interface, providing a robust starting point for developers seeking to build a dynamic and scalable online marketplace platform.
 
+<hr><br>
+
+## Demo
+
+<div align=center>
+  
+![Demo](https://github.com/user-attachments/assets/a5b7f6ff-c3ec-403c-aa05-4affde0130a0)
+
+</div>
 <hr><br>
 
 ## Steps
