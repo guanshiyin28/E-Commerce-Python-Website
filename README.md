@@ -19,6 +19,26 @@ This repository serves as a foundational framework for developing a Python-based
 
 <hr><br>
 
+## Features
+
+- User registration and authentication
+- Product listing and management
+- Basic search functionality
+- User-friendly interface
+- Responsive design
+
+<hr><br>
+
+## Technologies Used
+
+- Python
+- Flask
+- SQLite
+- HTML/CSS
+- JavaScript
+
+<hr><br>
+
 ## Demo
 
 <div align=center>
@@ -30,10 +50,10 @@ This repository serves as a foundational framework for developing a Python-based
 
 ## Steps
 
-1. Install python
+1. Install Python
 2. Install & upgrade pip
 
-```
+```bash
 python -m ensurepip --upgrade
 python get-pip.py
 python -m pip install --upgrade pip
@@ -41,27 +61,33 @@ python -m pip install --upgrade pip
 
 3. Clone this Repository
 
-```
+```bash
 git clone https://github.com/guanshiyin28/E-Commerce-Python-Website.git
 ```
 
 4. Direct to the directory
 
-```
+```bash
 cd E-Commerce-Python-Website
 ```
 
 5. Install requirements.txt
 
-```
-pip install requirements.txt
+```bash
+pip install -r requirements.txt
 ```
 
-6. Run with python and see through the localhost
+6. Run with Python and see through the localhost
 
-```
+```bash
 python app.py
 ```
+
+<hr><br>
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 <hr><br>
 
