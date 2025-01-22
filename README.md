@@ -19,6 +19,15 @@ This repository serves as a foundational framework for developing a Python-based
 
 <hr><br>
 
+## Demo
+
+<div align=center>
+  
+![Demo](https://github.com/user-attachments/assets/a5b7f6ff-c3ec-403c-aa05-4affde0130a0)
+
+</div>
+<hr><br>
+
 ## Features
 
 - User registration and authentication
@@ -39,16 +48,16 @@ This repository serves as a foundational framework for developing a Python-based
 
 <hr><br>
 
-## Demo
+## Project Setup
 
-<div align=center>
-  
-![Demo](https://github.com/user-attachments/assets/a5b7f6ff-c3ec-403c-aa05-4affde0130a0)
+Follow these steps to set up the project on your local machine.
 
-</div>
-<hr><br>
+### Prerequisites
 
-## Steps
+- Python installed on your machine
+- pip (Python package installer)
+
+### Steps to Run
 
 1. Install Python
 2. Install & upgrade pip
