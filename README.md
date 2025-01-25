@@ -1,12 +1,3 @@
-<div align=center>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=20:06D001,100:F0F0F0&section=footer&reversal=false&textBg=false&fontAlignY=50&descAlign=48&descAlignY=59"/>
-
-![image](https://github.com/user-attachments/assets/253287e6-25a9-4aef-95ae-53f94d441c48)
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=20:06D001,100:F0F0F0&section=header&reversal=false&textBg=false&fontAlignY=50&descAlign=48&descAlignY=59"/>
-
-</div>
-
 # E-Commerce Python Website
 
 This repository aims to provide a starting point for developing a Python-based marketplace web application.
@@ -19,13 +10,25 @@ This repository serves as a foundational framework for developing a Python-based
 
 <hr><br>
 
-## Demo
+## Demonstration
 
-<div align=center>
-  
-![Demo](https://github.com/user-attachments/assets/a5b7f6ff-c3ec-403c-aa05-4affde0130a0)
+Here is a demonstration of the `add_product` function from `app.py`:
 
-</div>
+```python
+def add_product(name, description, price):
+    product = {
+        'name': name,
+        'description': description,
+        'price': price
+    }
+    # Code to add the product to the database
+    return product
+
+# Example usage
+new_product = add_product('Sample Product', 'This is a sample product.', 19.99)
+print(new_product)
+```
+
 <hr><br>
 
 ## Features
@@ -96,12 +99,12 @@ python app.py
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache-2.0 License. See the [LICENSE](LICENSE) file for details.
 
 <hr><br>
 
 <div align="center">
-  <a href="https://www.instagram.com/guanshiyin_/">
-     <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=20:06D001,100:F0F0F0&section=footer&reversal=false&textBg=false&fontAlignY=50&descAlign=48&descAlignY=59"/>
-  </a>
+   <a href="https://www.instagram.com/guanshiyin_/">
+      <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=100:393E46,20:F7F7F7&section=footer&reversal=false&textBg=false&fontAlignY=50&descAlign=48&descAlignY=59"/>
+   </a>
 </div>
